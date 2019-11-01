@@ -1,23 +1,50 @@
 {
   "name": "play-with-github",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gabrielvv-tfm/play-with-github.git"
-  },
-  "keywords": [],
-  "author": "",
+  "description": "A Probot app",
+  "author": "gabrielvv-tfm <gabriel.vautrin@gmail.com>",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/gabrielvv-tfm/play-with-github/issues"
+  "repository": "https://github.com//play-with-github.git",
+  "homepage": "https://github.com//play-with-github",
+  "bugs": "https://github.com//play-with-github/issues",
+  "keywords": [
+    "probot",
+    "github",
+    "probot-app"
+  ],
+  "scripts": {
+    "dev": "nodemon",
+    "start": "probot run ./index.js",
+    "lint": "standard --fix",
+    "test": "jest && standard",
+    "test:watch": "jest --watch --notify --notifyMode=change --coverage"
   },
-  "homepage": "https://github.com/gabrielvv-tfm/play-with-github#readme",
   "dependencies": {
-    "@octokit/rest": "^16.34.1"
+    "probot": "^9.0.1"
+  },
+  "devDependencies": {
+    "jest": "^24.0.0",
+    "nock": "^11.6.0",
+    "nodemon": "^1.17.2",
+    "smee-client": "^1.0.2",
+    "standard": "^12.0.1"
+  },
+  "engines": {
+    "node": ">= 8.3.0"
+  },
+  "standard": {
+    "env": [
+      "jest"
+    ]
+  },
+  "nodemonConfig": {
+    "exec": "npm start",
+    "watch": [
+      ".env",
+      "."
+    ]
+  },
+  "jest": {
+    "testEnvironment": "node"
   }
 }
